@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaBasicDemo", "AvaloniaBasicDemo\AvaloniaBasicDemo.csproj", "{BE9867D2-E9F8-4BA8-A712-5876C4E00E80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{8E3E08A4-896E-4DDC-9191-9DB6857BCB8B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizingAdornerDemo", "ResizingAdornerDemo\ResizingAdornerDemo.csproj", "{359CF6E1-46E3-4CB4-88C1-06584A2FF4B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizingAdorner", "ResizingAdorner\ResizingAdorner.csproj", "{8D55F1E9-3EA9-4CC6-870F-1F7719B0F21A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyGrid", "PropertyGrid\PropertyGrid.csproj", "{541A2577-0DDD-42CD-B2DB-55DEB3CB487C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE9867D2-E9F8-4BA8-A712-5876C4E00E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9867D2-E9F8-4BA8-A712-5876C4E00E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9867D2-E9F8-4BA8-A712-5876C4E00E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9867D2-E9F8-4BA8-A712-5876C4E00E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359CF6E1-46E3-4CB4-88C1-06584A2FF4B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359CF6E1-46E3-4CB4-88C1-06584A2FF4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359CF6E1-46E3-4CB4-88C1-06584A2FF4B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359CF6E1-46E3-4CB4-88C1-06584A2FF4B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D55F1E9-3EA9-4CC6-870F-1F7719B0F21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D55F1E9-3EA9-4CC6-870F-1F7719B0F21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D55F1E9-3EA9-4CC6-870F-1F7719B0F21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D55F1E9-3EA9-4CC6-870F-1F7719B0F21A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541A2577-0DDD-42CD-B2DB-55DEB3CB487C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541A2577-0DDD-42CD-B2DB-55DEB3CB487C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541A2577-0DDD-42CD-B2DB-55DEB3CB487C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541A2577-0DDD-42CD-B2DB-55DEB3CB487C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

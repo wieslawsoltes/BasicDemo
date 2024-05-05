@@ -1,0 +1,46 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaBasic.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaBasic.Views.PropertiesView"
+             x:DataType="vm:TreeViewModel" x:CompileBindings="True">
+  <TreeDataGrid Source="{Binding PropertiesSource}" 
+                ShowColumnHeaders="True">
+    <TreeDataGrid.Styles>
+      <Style Selector="TreeDataGridRow">
+        <Setter Property="Height" Value="34" />
+      </Style>
+      <Style Selector="TreeDataGridCell">
+        <Setter Property="VerticalAlignment" Value="Center" />
+      </Style>
+      <Style Selector="TreeDataGridExpanderCell">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border x:Name="CellBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="0">
+              <DockPanel>
+                <Border DockPanel.Dock="Left"
+                        Margin="4 0"
+                        Width="12" Height="12">
+                  <ToggleButton Theme="{StaticResource FluentTreeViewExpandCollapseChevron}"
+                                Focusable="False"
+                                IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+                                IsVisible="{TemplateBinding ShowExpander}"
+                                Cursor="Hand"/>
+                </Border>
+                <Decorator Name="PART_Content"/>
+              </DockPanel>
+            </Border>
+          </ControlTemplate>
+        </Setter>
+      </Style>
+    </TreeDataGrid.Styles>
+  </TreeDataGrid>
+</UserControl>

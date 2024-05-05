@@ -1,0 +1,119 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ResizingAdorner"
+        xmlns:c="clr-namespace:ResizingAdorner.Controls"
+        xmlns:resizers="clr-namespace:ResizingAdorner.Resizers">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="Canvas.resizing > :is(Control)">
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+
+  <Style Selector="Canvas.resizing > :is(Control)">
+    <Setter Property="(AdornerLayer.IsClipEnabled)" Value="False" />
+    <Setter Property="(AdornerLayer.Adorner)">
+      <Template>
+        <c:ResizingAdornerPresenter AdornedControl="{Binding $parent[Control]}"
+                                    AdornedWidth="{Binding $parent[Control].Bounds.Width}"
+                                    AdornedHeight="{Binding $parent[Control].Bounds.Height}"
+                                    ShowThumbs="False"
+                                    ControlSelection="{x:Static c:ResizingAdornerPresenter.s_controlSelection}">
+          <c:ResizingAdornerPresenter.ControlResizer>
+            <resizers:CanvasControlResizer EnableSnap="True" SnapX="10" SnapY="10" />
+          </c:ResizingAdornerPresenter.ControlResizer>
+        </c:ResizingAdornerPresenter>
+      </Template>
+    </Setter>
+  </Style>
+
+  <Style Selector="Grid.resizing > :is(Control)">
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+
+  <Style Selector="Grid.resizing > :is(Control):not(c|GridAdorner)">
+    <Setter Property="(AdornerLayer.IsClipEnabled)" Value="False" />
+    <Setter Property="(AdornerLayer.Adorner)">
+      <Template>
+        <c:ResizingAdornerPresenter AdornedControl="{Binding $parent[Control]}"
+                                    AdornedWidth="{Binding $parent[Control].Bounds.Width}"
+                                    AdornedHeight="{Binding $parent[Control].Bounds.Height}"
+                                    ShowThumbs="False"
+                                    ControlSelection="{x:Static c:ResizingAdornerPresenter.s_controlSelection}">
+          <c:ResizingAdornerPresenter.ControlResizer>
+            <resizers:GridControlResizer />
+          </c:ResizingAdornerPresenter.ControlResizer>
+        </c:ResizingAdornerPresenter>
+      </Template>
+    </Setter>
+  </Style>
+
+  <Style Selector="DockPanel.resizing > :is(Control)">
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+
+  <Style Selector="DockPanel.resizing > :is(Control)">
+    <Setter Property="(AdornerLayer.IsClipEnabled)" Value="False" />
+    <Setter Property="(AdornerLayer.Adorner)">
+      <Template>
+        <c:ResizingAdornerPresenter AdornedControl="{Binding $parent[Control]}"
+                                    AdornedWidth="{Binding $parent[Control].Bounds.Width}"
+                                    AdornedHeight="{Binding $parent[Control].Bounds.Height}"
+                                    ShowThumbs="False"
+                                    ControlSelection="{x:Static c:ResizingAdornerPresenter.s_controlSelection}">
+          <c:ResizingAdornerPresenter.ControlResizer>
+            <resizers:DockPanelControlResizer />
+          </c:ResizingAdornerPresenter.ControlResizer>
+        </c:ResizingAdornerPresenter>
+      </Template>
+    </Setter>
+  </Style>
+
+  <Style Selector="StackPanel.resizing > :is(Control)">
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+
+  <Style Selector="StackPanel.resizing > :is(Control)">
+    <Setter Property="(AdornerLayer.IsClipEnabled)" Value="False" />
+    <Setter Property="(AdornerLayer.Adorner)">
+      <Template>
+        <c:ResizingAdornerPresenter AdornedControl="{Binding $parent[Control]}"
+                                    AdornedWidth="{Binding $parent[Control].Bounds.Width}"
+                                    AdornedHeight="{Binding $parent[Control].Bounds.Height}"
+                                    ShowThumbs="False"
+                                    ControlSelection="{x:Static c:ResizingAdornerPresenter.s_controlSelection}">
+          <c:ResizingAdornerPresenter.ControlResizer>
+            <resizers:StackPanelControlResizer />
+          </c:ResizingAdornerPresenter.ControlResizer>
+        </c:ResizingAdornerPresenter>
+      </Template>
+    </Setter>
+  </Style>
+
+  <Style Selector="WrapPanel.resizing > :is(Control)">
+    <Setter Property="IsHitTestVisible" Value="True" />
+  </Style>
+
+  <Style Selector="WrapPanel.resizing > :is(Control)">
+    <Setter Property="(AdornerLayer.IsClipEnabled)" Value="False" />
+    <Setter Property="(AdornerLayer.Adorner)">
+      <Template>
+        <c:ResizingAdornerPresenter AdornedControl="{Binding $parent[Control]}"
+                                    AdornedWidth="{Binding $parent[Control].Bounds.Width}"
+                                    AdornedHeight="{Binding $parent[Control].Bounds.Height}"
+                                    ShowThumbs="False"
+                                    ControlSelection="{x:Static c:ResizingAdornerPresenter.s_controlSelection}">
+          <c:ResizingAdornerPresenter.ControlResizer>
+            <resizers:WrapPanelControlResizer />
+          </c:ResizingAdornerPresenter.ControlResizer>
+        </c:ResizingAdornerPresenter>
+      </Template>
+    </Setter>
+  </Style>
+
+</Styles>
+

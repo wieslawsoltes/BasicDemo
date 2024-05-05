@@ -1,0 +1,29 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaBasic.ViewModels"
+             xmlns:behaviors="clr-namespace:AvaloniaBasic.Behaviors"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaBasicDemo.Views.ToolboxView"
+             x:DataType="vm:MainViewModel" x:CompileBindings="True">
+  <TreeDataGrid Source="{Binding ToolboxSource}" 
+                DataContext="{Binding Toolbox}"
+                ShowColumnHeaders="False">
+    <TreeDataGrid.Styles>
+      <Style Selector="TreeDataGridRow">
+        <Setter Property="(Interaction.Behaviors)">
+          <BehaviorCollectionTemplate>
+            <BehaviorCollection>
+              <behaviors:ToolboxDragBehavior PreviewCanvas="{Binding PreviewCanvas}" 
+                                             DropAreaCanvas="{Binding DropAreaCanvas}" 
+                                             RoutingStrategies="Tunnel" />
+              <behaviors:ToolboxDoubleTappedEventBehavior TargetCanvas="{Binding DropAreaCanvas}" 
+                                                          RoutingStrategies="Tunnel, Bubble" />
+            </BehaviorCollection>
+          </BehaviorCollectionTemplate>
+        </Setter>
+      </Style>
+    </TreeDataGrid.Styles>
+  </TreeDataGrid>
+</UserControl>

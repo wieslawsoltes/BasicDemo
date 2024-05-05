@@ -1,0 +1,13 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             RequestedThemeVariant="Light"
+             Name="Avalonia Basic"
+             x:Class="AvaloniaBasicDemo.App">
+  <Application.Styles>
+    <FluentTheme />
+    <StyleInclude Source="avares://ResizingAdorner/Controls/ResizingAdornerPresenter.axaml" />
+    <StyleInclude Source="avares://ResizingAdorner/Styles/Resizing.axaml" />
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+    <StyleInclude Source="avares://Avalonia.Controls.TreeDataGrid/Themes/Fluent.axaml" />
+  </Application.Styles>
+</Application>

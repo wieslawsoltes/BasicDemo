@@ -1,0 +1,51 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaBasic.ViewModels"
+             xmlns:behaviors="clr-namespace:AvaloniaBasic.Behaviors"
+             xmlns:views="clr-namespace:AvaloniaBasicDemo.Views"
+             xmlns:propertyEditor="clr-namespace:AvaloniaBasic.Views"
+             xmlns:propertyGrid="clr-namespace:AvaloniaBasic.Views;assembly=PropertyGrid"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaBasicDemo.Views.MainView"
+             x:DataType="vm:MainViewModel" x:CompileBindings="True"
+             Background="Transparent"
+             Name="Editor"
+             FontFamily="avares://Avalonia.Fonts.Inter/Assets#Inter">
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+  
+  <UserControl.KeyBindings>
+    <KeyBinding Command="{Binding #Editor.OnDelete}" Gesture="Delete" />
+    <KeyBinding Command="{Binding #Editor.OnDelete}" Gesture="Back" />
+  </UserControl.KeyBindings>
+
+  <Panel behaviors:DragSettings.MinimumDragDelta="{Binding DragSettings.MinimumDragDelta}"
+         behaviors:DragSettings.SnapToGrid="{Binding DragSettings.SnapToGrid}"
+         behaviors:DragSettings.SnapX="{Binding DragSettings.SnapX}"
+         behaviors:DragSettings.SnapY="{Binding DragSettings.SnapY}">
+    <Grid ColumnDefinitions="250,*,400">
+      <views:ToolboxView Grid.Column="0" />
+      <Grid RowDefinitions="*,*" Grid.Column="2">
+        <propertyEditor:LogicalTreeView DataContext="{Binding Tree}" Grid.Row="0" />
+        <propertyGrid:PropertiesView DataContext="{Binding Tree}" Grid.Row="1" />
+      </Grid>
+      <Grid Grid.Column="1" RowDefinitions="*,Auto">
+        <views:EditorCanvasView Grid.Row="0" />
+        <StackPanel Grid.Row="1" 
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal" 
+                    Spacing="4">
+          <CheckBox Content="Enable Resizing"
+                    IsChecked="{Binding EnableResizing}" />
+          <CheckBox Content="Enable Control Drag"
+                    IsChecked="{Binding DragSettings.EnableControlDrag}" />
+        </StackPanel>
+        
+      </Grid>
+    </Grid>
+    <Canvas Name="PreviewCanvas" IsHitTestVisible="False" />
+  </Panel>
+</UserControl>

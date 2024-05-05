@@ -1,0 +1,36 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaBasic.ViewModels"
+             xmlns:controls="clr-namespace:AvaloniaBasic.Controls"
+             xmlns:behaviors="clr-namespace:AvaloniaBasic.Behaviors"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaBasicDemo.Views.EditorCanvasView"
+             x:DataType="vm:MainViewModel" x:CompileBindings="True">
+  <Border BoxShadow="4 11 30 1 #3F000000"
+          Background="White" 
+          Width="800"
+          Height="600"
+          ZIndex="-1">
+    <Panel>
+      <controls:GridLines CellWidth="{Binding GridSettings.CellWidth}"
+                          CellHeight="{Binding GridSettings.CellHeight}"
+                          BoldSeparatorHorizontalSpacing="{Binding GridSettings.BoldSeparatorHorizontalSpacing}"
+                          BoldSeparatorVerticalSpacing="{Binding GridSettings.BoldSeparatorVerticalSpacing}"
+                          IsGridEnabled="{Binding GridSettings.IsGridEnabled}" />
+      <!-- Classes="resizing" -->
+      <Canvas Name="DropAreaCanvas"
+              Background="Transparent" 
+              Width="800"
+              Height="600"
+              behaviors:DragSettings.IsDropArea="True"
+              behaviors:DragSettings.EnableDrag="{Binding DragSettings.EnableControlDrag}"
+              Classes.resizing="{Binding EnableResizing}">
+        <Interaction.Behaviors>
+          <behaviors:ControlDragBehavior PreviewCanvas="{Binding PreviewCanvas}"/>
+        </Interaction.Behaviors>
+      </Canvas>
+    </Panel>
+  </Border>
+</UserControl>
