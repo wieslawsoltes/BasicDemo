@@ -1,6 +1,6 @@
 # Avalonia Basic
 
-Project started at 25th May, 2022. Its simple WYSIWYG editor for Avalonia, property grid control and resing adorners.
+Project started at 25th May, 2022. Its simple WYSIWYG editor for Avalonia, property grid control and resizing adorners.
 
 # License
 
